@@ -23,7 +23,7 @@ package encryption;
 import keys.PrivateKey;
 import keys.PublicKey;
 
-public class RSA
+public final class RSA
 {
     public RSA() { }
 

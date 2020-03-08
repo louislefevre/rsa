@@ -7,7 +7,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
-public class Main
+public final class Main
 {
     public static void main(String[] args)
     {
@@ -20,7 +20,7 @@ public class Main
         RSAKeyPair keyPair = new RSAKeyPair();
         PublicKey publicKey = keyPair.getPublicKey();
         PrivateKey privateKey = keyPair.getPrivateKey();
-        
+
         RSA rsa = new RSA();
 
         List<Integer> encryptedArray = new ArrayList<>();

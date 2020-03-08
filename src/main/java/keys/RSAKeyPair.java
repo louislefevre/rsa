@@ -2,7 +2,7 @@ package keys;
 
 import util.MathUtilities;
 
-public class RSAKeyPair
+public final class RSAKeyPair
 {
     private PublicKey publicKey;
     private PrivateKey privateKey;
