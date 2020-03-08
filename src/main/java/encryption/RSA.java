@@ -1,4 +1,4 @@
-/*
+package encryption;/*
 * 1. Choose two different prime numbers at random of similar bit-length. They are denoted by p and q.
 * 2. Calculate n=p*q. The number n is used as the modules for both private and public keys. Its length
 *    is that of the RSA key.
@@ -21,7 +21,8 @@
 
 
 
-import java.security.SecureRandom;
+import keys.PrivateKey;
+import keys.PublicKey;
 
 public class RSA
 {
