@@ -1,11 +1,11 @@
 package keys;
 
-public abstract class Key
+abstract class Key
 {
     private int modulus;
     private int exponent;
 
-    public Key(int modulus, int exponent)
+    Key(int modulus, int exponent)
     {
         this.modulus = modulus;
         this.exponent = exponent;
