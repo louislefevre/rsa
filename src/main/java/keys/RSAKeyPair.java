@@ -67,7 +67,6 @@ public final class RSAKeyPair
             randomNumber = MathUtilities.generateRandomNumber();
         } while(!(randomNumber > 1 && randomNumber < phi && MathUtilities.isCoPrime(randomNumber, phi)));
 
-
         return randomNumber;
     }
 

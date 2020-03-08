@@ -2,8 +2,8 @@ package keys;
 
 public abstract class Key
 {
-    private int modulus;
-    private int exponent;
+    private final int modulus;
+    private final int exponent;
 
     Key(int modulus, int exponent)
     {

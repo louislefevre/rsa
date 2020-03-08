@@ -15,7 +15,7 @@ Demonstrates how the RSA algorithms work.
   - Your program should prompt the user to input certain parameters that would lead to the problematic state.
 
 - Design at least a simple user interface to allow the user to simulate a communication scenario:
-  - Where Alice sends an encrypted message to Bob, and Bob decrypts the ciphertext to read the message.
+  - Where Alice sends an encrypted message to Bob, and Bob decrypts the cipher text to read the message.
   - Also, Charlie may intercept the data flow and obtain unauthorised information.
 - For example, the following format may be adopted to demonstrate what happens with the plaintext m that travels from Alice to Bob, where “??” parts are for you to design:
   Alice    Charlie    Bob
@@ -31,7 +31,7 @@ Demonstrates how the RSA algorithms work.
              ↓        ↓
              ??       ??
 
-It would be easier to divide the task into a number of subtasks:
+It would be easier to divide the task into a number of sub-tasks:
 1. Implement a crypto-random key generator and the algorithm for modular exponentiation.
 2. Implement the RSA encryption algorithm.
 3. Implement the RSA decryption algorithm.
@@ -72,5 +72,5 @@ It would be easier to divide the task into a number of subtasks:
 - [Public Key Cryptography - Computerphile](https://www.youtube.com/watch?v=GSIDS_lvRv4)
 - [The RSA Encryption Algorithm](https://www.youtube.com/watch?v=4zahvcJ9glg)
 - [Public Key Cryptography: RSA Encryption Algorithm](https://www.youtube.com/watch?v=wXB-V_Keiu8)
-- [Crypoto-It - RSA](http://www.crypto-it.net/eng/asymmetric/rsa.html?tab=0)
+- [Crypto-It - RSA](http://www.crypto-it.net/eng/asymmetric/rsa.html?tab=0)
 - [Computer Security CIS326](http://homepages.gold.ac.uk/rachel/)
