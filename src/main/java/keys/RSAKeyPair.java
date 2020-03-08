@@ -39,31 +39,31 @@ public class RSAKeyPair
         return randomNumber;
     }
 
-    private int generateModulus(int p, int q)
+    private int generateModulus(int primeOne, int primeTwo)
     {
-        return p*q;
+        return primeOne * primeTwo;
     }
 
-    private int generatePhi(int p, int q)
+    private int generatePhi(int primeOne, int primeTwo)
     {
-        return (p - 1) * (q - 1);
+        return (primeOne - 1) * (primeTwo - 1);
     }
 
-    private int generatePublicExponent(int r)
+    private int generatePublicExponent(int phi)
     {
         int randomNumber;
 
-        do{
+        do {
             randomNumber = MathUtilities.generateRandomNumber();
-        }while(!(randomNumber > 1 && randomNumber < r && MathUtilities.isCoPrime(randomNumber, r)));
+        } while(!(randomNumber > 1 && randomNumber < phi && MathUtilities.isCoPrime(randomNumber, phi)));
 
 
         return randomNumber;
     }
 
-    private int generatePrivateExponent(int e, int r)
+    private int generatePrivateExponent(int exponent, int phi)
     {
-        return MathUtilities.findInverse(e, r);
+        return MathUtilities.findInverse(exponent, phi);
     }
 
     public PublicKey getPublicKey()

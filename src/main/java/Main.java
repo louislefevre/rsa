@@ -12,15 +12,15 @@ public class Main
         PublicKey publicKey = keyPair.getPublicKey();
         PrivateKey privateKey = keyPair.getPrivateKey();
 
-        int message = 17;
+        int message = 56;
 
         RSA rsa = new RSA();
         int encryptedMessage = rsa.encrypt(message, publicKey);
         int decryptedMessage = rsa.decrypt(encryptedMessage, privateKey);
 
-        System.out.println("m: "+message);
-        System.out.println("c: "+encryptedMessage);
-        System.out.println("dm: "+decryptedMessage);
+        System.out.println("Original Message: " + message);
+        System.out.println("Encrypted Message: " + encryptedMessage);
+        System.out.println("Decrypted Message: " + decryptedMessage);
     }
 }
 

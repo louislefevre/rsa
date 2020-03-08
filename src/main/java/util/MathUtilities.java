@@ -28,45 +28,46 @@ public final class MathUtilities
         return true;
     }
 
-    public static int findInverse(int b, int a)
+    public static int findInverse(int numOne, int numTwo)
     {
-        int store=a;
+        int store = numTwo;
         int temp;
         int q;
-        int sign=1;
-        int r=1;
-        int s=0;
-        while(b!=0)
+        int sign = 1;
+        int result = 1;
+        int s = 0;
+
+        while (numOne!=0)
         {
-            q=a/b;
-            temp=r;
-            r=temp*q+s;
-            s=temp;
-            temp=b;
-            b=a-q*temp;
-            a=temp;
-            sign=-sign;
+            q = numTwo / numOne;
+            temp = result;
+            result = temp * q + s;
+            s = temp;
+            temp = numOne;
+            numOne = numTwo - q * temp;
+            numTwo = temp;
+            sign = -sign;
         }
-        if(sign==-1)
-            s=b-s;
+        if (sign == -1)
+            s = numOne - s;
 
-        return (r-s)%store;
+        return (result - s) % store;
     }
 
-    public static boolean isCoPrime(int e, int r)
+    public static boolean isCoPrime(int numOne, int numTwo)
     {
-        return GCD(e, r) == 1;
+        return GCD(numOne, numTwo) == 1;
     }
 
-    private static int GCD(int a, int b)
+    private static int GCD(int numOne, int numTwo)
     {
         // https://www.geeksforgeeks.org/check-two-numbers-co-prime-not/
-        if(a == 0 || b == 0)
+        if (numOne == 0 || numTwo == 0)
             return 0;
-        if(a == b)
-            return a;
-        if(a > b)
-            return GCD(a-b, b);
-        return GCD(a, b-a);
+        if (numOne == numTwo)
+            return numOne;
+        if (numOne > numTwo)
+            return GCD(numOne-numTwo, numTwo);
+        return GCD(numOne, numTwo-numOne);
     }
 }
