@@ -15,4 +15,6 @@ public final class Main
 * TODO: Write tests for trying a variety of characters.
 * TODO: Add ability to encrypt/decrypt file.
 * TODO: Add ability to save keys to files.
+* TODO: Add menu functionality.
+* TODO: Have program run from command line.
 */
