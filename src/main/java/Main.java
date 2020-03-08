@@ -13,4 +13,6 @@ public final class Main
 * TODO: Use the library BigInteger to work with big numbers.
 * TODO: Write tests for running the same message many times, seeing if it ever breaks.
 * TODO: Write tests for trying a variety of characters.
+* TODO: Add ability to encrypt/decrypt file.
+* TODO: Add ability to save keys to files.
 */
