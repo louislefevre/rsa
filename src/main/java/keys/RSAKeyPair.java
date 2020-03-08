@@ -12,25 +12,35 @@ public final class RSAKeyPair
         this.generateKeys();
     }
 
+    public PublicKey getPublicKey()
+    {
+        return this.publicKey;
+    }
+
+    public PrivateKey getPrivateKey()
+    {
+        return this.privateKey;
+    }
+
     private void generateKeys()
     {
         int primeOne;
         int primeTwo;
         do {
-            primeOne = this.generatePrime();
-            primeTwo = this.generatePrime();
+            primeOne = generatePrime();
+            primeTwo = generatePrime();
         } while(primeOne == primeTwo);
 
-        int modulus = this.generateModulus(primeOne, primeTwo);
-        int phi = this.generatePhi(primeOne, primeTwo);
-        int publicExponent = this.generatePublicExponent(phi);
-        int privateExponent = this.generatePrivateExponent(publicExponent, phi);
+        int modulus = generateModulus(primeOne, primeTwo);
+        int phi = generatePhi(primeOne, primeTwo);
+        int publicExponent = generatePublicExponent(phi);
+        int privateExponent = generatePrivateExponent(publicExponent, phi);
 
         this.publicKey = new PublicKey(modulus, publicExponent);
         this.privateKey = new PrivateKey(modulus, privateExponent);
     }
 
-    private int generatePrime()
+    private static int generatePrime()
     {
         int randomNumber;
         do {
@@ -39,17 +49,17 @@ public final class RSAKeyPair
         return randomNumber;
     }
 
-    private int generateModulus(int primeOne, int primeTwo)
+    private static int generateModulus(int primeOne, int primeTwo)
     {
         return primeOne * primeTwo;
     }
 
-    private int generatePhi(int primeOne, int primeTwo)
+    private static int generatePhi(int primeOne, int primeTwo)
     {
         return (primeOne - 1) * (primeTwo - 1);
     }
 
-    private int generatePublicExponent(int phi)
+    private static int generatePublicExponent(int phi)
     {
         int randomNumber;
 
@@ -61,18 +71,8 @@ public final class RSAKeyPair
         return randomNumber;
     }
 
-    private int generatePrivateExponent(int exponent, int phi)
+    private static int generatePrivateExponent(int exponent, int phi)
     {
         return MathUtilities.findInverse(exponent, phi);
-    }
-
-    public PublicKey getPublicKey()
-    {
-        return this.publicKey;
-    }
-
-    public PrivateKey getPrivateKey()
-    {
-        return this.privateKey;
     }
 }

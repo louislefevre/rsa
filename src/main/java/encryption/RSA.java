@@ -22,42 +22,27 @@ package encryption;
 
 import keys.PrivateKey;
 import keys.PublicKey;
+import util.MathUtilities;
 
 public final class RSA
 {
     public RSA() { }
 
-    public int decrypt(int c, PrivateKey privateKey)
+    public static int decrypt(int cipher, PrivateKey privateKey)
     {
         int exponent = privateKey.getExponent();
         int modulus = privateKey.getModulus();
 
-        return this.fastModExp(c, exponent, modulus);
+        return MathUtilities.modularExponentiation(cipher, exponent, modulus);
     }
 
-    public int encrypt(int message, PublicKey publicKey)
+    public static int encrypt(int message, PublicKey publicKey)
     {
         int exponent = publicKey.getExponent();
         int modulus = publicKey.getModulus();
 
-        return this.fastModExp(message, exponent, modulus);
+        return MathUtilities.modularExponentiation(message, exponent, modulus);
     }
 
-    private int fastModExp(int base, int power, int modulus)  //x is the base, n is the power, m is the modulus
-    {
-        int result = 1;
-        int update = base % modulus;
 
-        do
-        {
-            if (power % 2 == 1)
-                result = (result * update) % modulus;
-
-            power = (int)Math.floor(power / 2f);
-            update = (update * update) % modulus;
-
-        } while(power != 0);
-
-        return result;
-    }
 }
