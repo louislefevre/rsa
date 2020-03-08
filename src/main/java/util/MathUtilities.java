@@ -4,6 +4,9 @@ import java.security.SecureRandom;
 
 public final class MathUtilities
 {
+    // This value is based off the amount of values in an ASCII table
+    private static final int bound = 128;
+
     private MathUtilities()
     {
         throw new UnsupportedOperationException();
@@ -12,7 +15,7 @@ public final class MathUtilities
     public static int generateRandomNumber()
     {
         SecureRandom random = new SecureRandom();
-        return random.nextInt(128);
+        return random.nextInt(bound);
     }
 
     public static boolean isPrime(int num)

@@ -8,19 +8,47 @@ public final class RSA
 {
     public RSA() { }
 
-    public static int decrypt(int cipher, PrivateKey privateKey)
+    public String encrypt(String text, PublicKey publicKey)
     {
-        int exponent = privateKey.getExponent();
-        int modulus = privateKey.getModulus();
+        char[] charArray = text.toCharArray();
+        StringBuilder encryptedText = new StringBuilder();
 
-        return MathUtilities.modularExponentiation(cipher, exponent, modulus);
+        for(char letter : charArray)
+        {
+            int encryptedCharacter = encryptCharacter(letter, publicKey);
+            encryptedText.append((char) encryptedCharacter);
+        }
+
+        return encryptedText.toString();
     }
 
-    public static int encrypt(int message, PublicKey publicKey)
+    public String decrypt(String text, PrivateKey privateKey)
+    {
+        char[] charArray = text.toCharArray();
+        StringBuilder decryptedText = new StringBuilder();
+
+        for(char letter : charArray)
+        {
+            int shiftedLetter = decryptCharacter(letter, privateKey);
+            decryptedText.append((char) shiftedLetter);
+        }
+
+        return decryptedText.toString();
+    }
+
+    private static int encryptCharacter(int message, PublicKey publicKey)
     {
         int exponent = publicKey.getExponent();
         int modulus = publicKey.getModulus();
 
         return MathUtilities.modularExponentiation(message, exponent, modulus);
+    }
+
+    private static int decryptCharacter(int cipher, PrivateKey privateKey)
+    {
+        int exponent = privateKey.getExponent();
+        int modulus = privateKey.getModulus();
+
+        return MathUtilities.modularExponentiation(cipher, exponent, modulus);
     }
 }
