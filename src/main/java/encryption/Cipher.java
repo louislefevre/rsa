@@ -23,10 +23,10 @@ public final class Cipher
         // Create an RSA algorithm object
         RSA rsa = new RSA();
 
-        // Encrypt the message using the public key
+        // Encrypt the message using one of the keys
         String encryptedMessage = rsa.encrypt(message, publicKey);
 
-        // Decrypt the message using the private key
+        // Decrypt the message using the other key
         String decryptedMessage = rsa.decrypt(encryptedMessage, privateKey);
 
         // Print the results

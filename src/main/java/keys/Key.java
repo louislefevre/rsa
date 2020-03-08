@@ -1,6 +1,6 @@
 package keys;
 
-abstract class Key
+public abstract class Key
 {
     private int modulus;
     private int exponent;
