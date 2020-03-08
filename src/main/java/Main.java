@@ -2,44 +2,32 @@ public class Main
 {
     public static void main(String[] args)
     {
-        // Create RSA algorithm object.
+        RSAKeyPair keyPair = new RSAKeyPair();
+
+        PublicKey publicKey = keyPair.getPublicKey();
+        PrivateKey privateKey = keyPair.getPrivateKey();
+
+        int message = 17;
+
         RSA rsa = new RSA();
+        int encryptedMessage = rsa.encrypt(message, publicKey);
+        int decryptedMessage = rsa.decrypt(encryptedMessage, privateKey);
 
-        // Generate two random prime numbers, p and q.
-        int p = rsa.generatePrime();
-        int q = rsa.generatePrime();
-
-        // Calculate n=p*q modulus.
-        int n = rsa.generateModulus(p, q);
-
-        // Calculating Phi Using Euler Totient Function.
-        int r = rsa.generatePhi(p, q);
-
-        // Generate the exponents.
-        int e = rsa.generatePublicExponent(r);
-        int d = rsa.generatePrivateExponent(e, r);
-
-        // Assign keys
-        int[] publicKey = {n, e};
-        int[] privateKey = {n, d};
-
-        // Get message
-        int m = 117;
-
-        // Encrypt the message
-        int c = rsa.encrypt(m, publicKey);
-        int dm = rsa.decrypt(c, privateKey);
-
-
-        System.out.println("p: "+p);
-        System.out.println("q: "+q);
-        System.out.println("n: "+n);
-        System.out.println("r: "+r);
-        System.out.println("e: "+e);
-        System.out.println("d: "+d);
-        System.out.println("---");
-        System.out.println("m: "+m);
-        System.out.println("c: "+c);
-        System.out.println("dm: "+dm);
+        System.out.println("m: "+message);
+        System.out.println("c: "+encryptedMessage);
+        System.out.println("dm: "+decryptedMessage);
     }
 }
+
+/*
+* n = modulus
+* */
+
+
+//        System.out.println("p: "+p);
+//        System.out.println("q: "+q);
+//        System.out.println("n: "+n);
+//        System.out.println("r: "+r);
+//        System.out.println("e: "+e);
+//        System.out.println("d: "+d);
+//        System.out.println("---");

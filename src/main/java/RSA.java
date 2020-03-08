@@ -30,56 +30,20 @@ public class RSA
 
     }
 
-    public int decrypt(int c, int[] privateKey)
+    public int decrypt(int c, PrivateKey privateKey)
     {
-        int n = privateKey[0];
-        int d = privateKey[1];
+        int n = privateKey.getModulus();
+        int d = privateKey.getExponent();
 
         return this.fastModExp(c, d, n);
     }
 
-    public int encrypt(int m, int[] publicKey)
+    public int encrypt(int m, PublicKey publicKey)
     {
-        int n = publicKey[0];
-        int e = publicKey[1];
+        int n = publicKey.getModulus();
+        int e = publicKey.getExponent();
 
         return this.fastModExp(m, e, n);
-    }
-
-    public int generatePrivateExponent(int e, int r)
-    {
-        return this.findInverse(e, r);
-    }
-
-    public int generatePublicExponent(int r)
-    {
-        int randomNumber;
-
-        do{
-            randomNumber = this.generateRandomNumber();
-        }while(!(randomNumber > 1 && randomNumber < r && this.isCoPrime(randomNumber, r)));
-
-
-        return randomNumber;
-    }
-
-    public int generatePhi(int p, int q)
-    {
-        return (p - 1) * (q - 1);
-    }
-
-    public int generateModulus(int p, int q)
-    {
-        return p*q;
-    }
-
-    public int generatePrime()
-    {
-        int randomNumber;
-        do {
-            randomNumber = this.generateRandomNumber();
-        }while(!this.isPrime(randomNumber));
-        return randomNumber;
     }
 
     private int fastModExp(int x, int n, int m)  //x is the base, n is the power, m is the modulus
@@ -96,70 +60,5 @@ public class RSA
         }while(n != 0);
 
         return y;
-    }
-
-    private int findInverse(int b, int a)
-    {
-        int store=a;
-        int temp;
-        int q;
-        int sign=1;
-        int r=1;
-        int s=0;
-        while(b!=0)
-        {
-            q=a/b;
-            temp=r;
-            r=temp*q+s;
-            s=temp;
-            temp=b;
-            b=a-q*temp;
-            a=temp;
-            sign=-sign;
-        }
-        if(sign==-1)
-            s=b-s;
-
-        int answer=(r-s)%store;
-
-        return answer;
-    }
-
-    private boolean isCoPrime(int e, int r)
-    {
-        // https://www.geeksforgeeks.org/check-two-numbers-co-prime-not/
-        if(this.GCD(e, r) == 1)
-            return true;
-        return false;
-    }
-
-    private int GCD(int a, int b)
-    {
-        if(a == 0 || b == 0)
-            return 0;
-        if(a == b)
-            return a;
-        if(a > b)
-            return GCD(a-b, b);
-        return GCD(a, b-a);
-    }
-
-    private boolean isPrime(int num)
-    {
-        // https://mkyong.com/java/how-to-determine-a-prime-number-in-java/
-        if(num <= 1 || num % 2 == 0)
-            return false;
-
-        for(int i = 3; i*i <= num; i+=2)
-            if(num % i == 0)
-                return false;
-
-        return true;
-    }
-
-    private int generateRandomNumber()
-    {
-        SecureRandom random = new SecureRandom();
-        return random.nextInt(100);
     }
 }
