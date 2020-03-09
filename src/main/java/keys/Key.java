@@ -1,31 +1,25 @@
 package keys;
 
+import java.math.BigInteger;
+
 public abstract class Key
 {
-    private final int modulus;
-    private final int exponent;
+    private final BigInteger exponent;
 
-    Key(int modulus, int exponent)
+    Key(BigInteger exponent)
     {
-        this.modulus = modulus;
         this.exponent = exponent;
     }
 
-    public int getModulus()
+    public BigInteger getExponent()
     {
-        return this.modulus;
-    }
-
-    public int getExponent()
-    {
-        return this.exponent;
+        return exponent;
     }
 
     @Override
     public String toString() {
         return "Key{" +
-                "modulus=" + modulus +
-                ", exponent=" + exponent +
+                "exponent=" + exponent +
                 '}';
     }
 }

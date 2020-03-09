@@ -1,9 +1,11 @@
 package keys;
 
+import java.math.BigInteger;
+
 public final class PrivateKey extends Key
 {
-    PrivateKey(int modulus, int exponent)
+    PrivateKey(BigInteger exponent)
     {
-        super(modulus, exponent);
+        super(exponent);
     }
 }

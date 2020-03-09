@@ -1,9 +1,11 @@
 package keys;
 
+import java.math.BigInteger;
+
 public final class PublicKey extends Key
 {
-    PublicKey(int modulus, int exponent)
+    PublicKey(BigInteger exponent)
     {
-        super(modulus, exponent);
+        super(exponent);
     }
 }
