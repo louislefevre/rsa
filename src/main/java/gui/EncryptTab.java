@@ -1,7 +1,6 @@
 package gui;
 
 import cryptosystem.RSA;
-import util.InterfaceUtilities;
 
 import javax.swing.*;
 import java.awt.*;
@@ -26,7 +25,7 @@ final class EncryptTab extends Tab
     }
 
     @Override
-    public String getTitle()
+    String getTitle()
     {
         return this.title;
     }

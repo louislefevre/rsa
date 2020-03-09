@@ -1,6 +1,6 @@
 package keys;
 
-import util.ConversionUtilities;
+import cryptosystem.RSA;
 
 import java.math.BigInteger;
 
@@ -20,6 +20,6 @@ abstract class Key
 
     public String getExponentString()
     {
-        return ConversionUtilities.parseString(this.exponent);
+        return this.exponent.toString(RSA.RADIX);
     }
 }

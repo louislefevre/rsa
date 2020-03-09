@@ -1,16 +1,11 @@
 package gui;
 
 import keys.KeyPair;
-import keys.PrivateKey;
-import keys.PublicKey;
 import keys.RSAKeyGenerator;
-import util.ConversionUtilities;
-import util.InterfaceUtilities;
 
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionListener;
-import java.math.BigInteger;
 
 final class GenerateKeysTab extends Tab
 {
@@ -30,7 +25,7 @@ final class GenerateKeysTab extends Tab
     }
 
     @Override
-    public String getTitle()
+    String getTitle()
     {
         return this.title;
     }

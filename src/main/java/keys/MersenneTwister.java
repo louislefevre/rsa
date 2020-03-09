@@ -1,6 +1,6 @@
 /* https://cs.gmu.edu/~sean/research/mersenne/MersenneTwister.java */
 
-package util;
+package keys;
 
 import java.io.*;
 
@@ -178,7 +178,7 @@ import java.io.*;
  @version 22
  */
 
-public final strictfp class MersenneTwister extends java.util.Random implements Serializable, Cloneable
+final strictfp class MersenneTwister extends java.util.Random implements Serializable, Cloneable
 {
     // Serialization
     private static final long serialVersionUID = -4035832775130174188L;  // locked as of Version 15

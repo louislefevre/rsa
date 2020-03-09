@@ -1,6 +1,6 @@
 package keys;
 
-import util.ConversionUtilities;
+import cryptosystem.RSA;
 
 import java.math.BigInteger;
 
@@ -34,6 +34,6 @@ public final class KeyPair
 
     public String getModulusString()
     {
-        return ConversionUtilities.parseString(this.modulus);
+        return this.modulus.toString(RSA.RADIX);
     }
 }

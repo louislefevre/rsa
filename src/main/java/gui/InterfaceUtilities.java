@@ -1,9 +1,9 @@
-package util;
+package gui;
 
 import javax.swing.*;
 import java.awt.*;
 
-public final class InterfaceUtilities
+final class InterfaceUtilities
 {
     public static final int COLUMNS = 40;
     public static final int ROWS = 5;
@@ -13,7 +13,7 @@ public final class InterfaceUtilities
         throw new UnsupportedOperationException();
     }
 
-    public static JTextArea createTextArea(String title)
+    static JTextArea createTextArea(String title)
     {
         JTextArea textArea = new JTextArea(ROWS, COLUMNS);
         textArea.setLineWrap(true);
@@ -21,21 +21,21 @@ public final class InterfaceUtilities
         return textArea;
     }
 
-    public static JTextArea createEditableTextArea(String title)
+    static JTextArea createEditableTextArea(String title)
     {
         JTextArea textArea = createTextArea(title);
         textArea.setEditable(true);
         return textArea;
     }
 
-    public static JTextArea createNonEditableTextArea(String title)
+    static JTextArea createNonEditableTextArea(String title)
     {
         JTextArea textArea = createTextArea(title);
         textArea.setEditable(false);
         return textArea;
     }
 
-    public static Component addAreaPadding(int width, int height)
+    static Component addAreaPadding(int width, int height)
     {
         return Box.createRigidArea(new Dimension(width, height));
     }
