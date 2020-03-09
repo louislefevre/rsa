@@ -77,3 +77,4 @@ It would be easier to divide the task into a number of sub-tasks:
 - [RSA Step-by-step](https://www.cryptool.org/en/cto-highlights/rsa-step-by-step)
 - [RSA Calculator](https://www.cs.drexel.edu/~jpopyack/IntroCS/HW/RSAWorksheet.html)
 - [Cryptography](https://introcs.cs.princeton.edu/java/99crypto/)
+- [Hamming Weight](https://en.wikipedia.org/wiki/Hamming_weight)
