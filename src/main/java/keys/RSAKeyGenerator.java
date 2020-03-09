@@ -12,22 +12,13 @@ public final class RSAKeyGenerator
 
     public KeyPair generateKeyPair()
     {
-        Random randomNumberGenerator = new MersenneTwister();
+        Random random = new MersenneTwister();
 
-        BigInteger primeP = BigInteger.valueOf(2);
-        while (!MathUtilities.isDivisibleByLargePrime(primeP.add(BigInteger.ONE)) &&
-               !MathUtilities.isDivisibleByLargePrime(primeP.subtract(BigInteger.ONE)))
-            primeP = BigInteger.probablePrime(2048, randomNumberGenerator);
-
-        BigInteger primeQ = BigInteger.valueOf(2);
-        while (!MathUtilities.isDivisibleByLargePrime(primeQ.add(BigInteger.ONE)) &&
-               !MathUtilities.isDivisibleByLargePrime(primeQ.subtract(BigInteger.ONE)))
-            primeQ = BigInteger.probablePrime(2050, randomNumberGenerator);
-
+        BigInteger primeP = BigInteger.probablePrime(MathUtilities.BIT_LENGTH, random);
+        BigInteger primeQ = BigInteger.probablePrime(MathUtilities.BIT_LENGTH+2, random);
         BigInteger modulus = primeP.multiply(primeQ);
         BigInteger phi = primeP.subtract(BigInteger.ONE).multiply(primeQ.subtract(BigInteger.ONE));
-
-        BigInteger publicExponent = BigInteger.valueOf(65537);
+        BigInteger publicExponent = BigInteger.valueOf(MathUtilities.PRIME_BOUND);
         BigInteger privateExponent = publicExponent.modInverse(phi);
 
         PublicKey publicKey = new PublicKey(publicExponent);
