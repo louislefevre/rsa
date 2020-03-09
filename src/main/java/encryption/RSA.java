@@ -14,6 +14,8 @@ public final class RSA
 
         for(char letter : charArray)
         {
+            if(letter > MathUtilities.ASCIIMax)
+                throw new IllegalArgumentException(String.format("Invalid ASCII character: %s. Must be between 0 and 127.", (int)letter));
             int encryptedCharacter = encryptCharacter(letter, key);
             encryptedText.append((char) encryptedCharacter);
         }
@@ -28,8 +30,8 @@ public final class RSA
 
         for(char letter : charArray)
         {
-            int shiftedLetter = decryptCharacter(letter, key);
-            decryptedText.append((char) shiftedLetter);
+            int decryptCharacter = decryptCharacter(letter, key);
+            decryptedText.append((char) decryptCharacter);
         }
 
         return decryptedText.toString();

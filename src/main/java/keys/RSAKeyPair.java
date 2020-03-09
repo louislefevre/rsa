@@ -24,22 +24,18 @@ public final class RSAKeyPair
 
     private void generateKeys()
     {
-        int primeOne;
-        int primeTwo;
+        int primeOne, primeTwo;
+        int modulus, phi;
+        int publicExponent, privateExponent;
+
         do {
             primeOne = generatePrime();
             primeTwo = generatePrime();
-        } while(primeOne == primeTwo);
-
-        int modulus = generateModulus(primeOne, primeTwo);
-        int phi = generatePhi(primeOne, primeTwo);
-
-        int publicExponent;
-        int privateExponent;
-        do {
+            modulus = generateModulus(primeOne, primeTwo);
+            phi = generatePhi(primeOne, primeTwo);
             publicExponent = generatePublicExponent(phi);
             privateExponent = generatePrivateExponent(publicExponent, phi);
-        } while(publicExponent == privateExponent);
+        } while(primeOne == primeTwo || publicExponent == privateExponent || modulus <= MathUtilities.ASCIIMax);
 
         this.publicKey = new PublicKey(modulus, publicExponent);
         this.privateKey = new PrivateKey(modulus, privateExponent);
@@ -49,8 +45,9 @@ public final class RSAKeyPair
     {
         int randomNumber;
         do {
-            randomNumber = MathUtilities.generateRandomNumber();
+            randomNumber = MathUtilities.generateRandomNumber(1, MathUtilities.ASCIIMax);
         } while(!MathUtilities.isPrime(randomNumber));
+
         return randomNumber;
     }
 
@@ -69,9 +66,8 @@ public final class RSAKeyPair
         int randomNumber;
 
         do {
-            randomNumber = MathUtilities.generateRandomNumber();
+            randomNumber = MathUtilities.generateRandomNumber(1, MathUtilities.ASCIIMax);
         } while(!(randomNumber > 1 && randomNumber < phi && MathUtilities.isCoPrime(randomNumber, phi)));
-
         return randomNumber;
     }
 

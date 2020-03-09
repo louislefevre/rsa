@@ -9,8 +9,10 @@ class MathUtilitiesTest
     @Test
     public void randomNumberShouldBeWithinRange()
     {
-        int random = MathUtilities.generateRandomNumber();
-        assertTrue(random > 0, "Random was 0 or less: " + random);
-        assertTrue(random < MathUtilities.getBound(), "Message was out of : " + random);
+        int min = 1;
+        int max = 1000;
+        int random = MathUtilities.generateRandomNumber(min, max);
+        assertTrue(random < min, "Value was greater than minimum.");
+        assertTrue(random > max, "Value was greater than maximum.");
     }
 }

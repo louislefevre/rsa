@@ -20,4 +20,12 @@ public abstract class Key
     {
         return this.exponent;
     }
+
+    @Override
+    public String toString() {
+        return "Key{" +
+                "modulus=" + modulus +
+                ", exponent=" + exponent +
+                '}';
+    }
 }

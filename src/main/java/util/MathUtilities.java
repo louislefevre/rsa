@@ -4,27 +4,17 @@ import java.security.SecureRandom;
 
 public final class MathUtilities
 {
-    // This value is based off the amount of values in an ASCII table
-    private static final int bound = 5000;
+    public static final int ASCIIMax = 127;
 
     private MathUtilities()
     {
         throw new UnsupportedOperationException();
     }
 
-    public static int getBound()
-    {
-        return bound;
-    }
-
-    public static int generateRandomNumber()
+    public static int generateRandomNumber(int min, int max)
     {
         SecureRandom random = new SecureRandom();
-        int number;
-        do {
-            number = random.nextInt(bound);
-        } while(number < 1);
-        return number;
+        return random.nextInt((max-min)+min);
     }
 
     public static boolean isPrime(int num)
@@ -48,17 +38,6 @@ public final class MathUtilities
     public static int findGCD(int numOne, int numTwo)
     {
         return (numTwo != 0) ? findGCD(numTwo, numOne % numTwo) : numOne;
-        // https://www.geeksforgeeks.org/check-two-numbers-co-prime-not/
-        /*
-        if (numOne == 0 || numTwo == 0)
-            return 0;
-        if (numOne == numTwo)
-            return numOne;
-        if (numOne > numTwo)
-            return findGCD(numOne-numTwo, numTwo);
-        return findGCD(numOne, numTwo-numOne);
-
-         */
     }
 
     public static int findInverse(int numOne, int numTwo)
