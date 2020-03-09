@@ -67,6 +67,9 @@ final class DecryptTab extends Tab
         String privateKeyText = this.privateKeyTextArea.getText();
         String encryptedMessageText = this.encryptedMessageTextArea.getText();
 
+        if(modulusText.isBlank() || privateKeyText.isBlank() || encryptedMessageText.isBlank())
+            return;
+
         RSA rsa = new RSA();
         String decryptedMessage = rsa.decrypt(modulusText, privateKeyText, encryptedMessageText);
 

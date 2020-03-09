@@ -67,6 +67,9 @@ final class EncryptTab extends Tab
         String publicKeyText = this.publicKeyTextArea.getText();
         String messageText = this.messageTextArea.getText();
 
+        if(modulusText.isBlank() || publicKeyText.isBlank() || messageText.isBlank())
+            return;
+
         RSA rsa = new RSA();
         String encryptedMessage = rsa.encrypt(modulusText, publicKeyText, messageText);
 
