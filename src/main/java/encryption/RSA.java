@@ -12,7 +12,7 @@ public final class RSA
         BigInteger modulus = parseInteger(modulusText);
         BigInteger exponent = parseInteger(exponentText);
         BigInteger message = stringToBigInteger(messageText);
-        BigInteger encryptedMessage = message.modPow(exponent, modulus);
+        BigInteger encryptedMessage = modularExponentiation(message, exponent, modulus);
         return parseString(encryptedMessage);
     }
 
@@ -21,8 +21,13 @@ public final class RSA
         BigInteger modulus = parseInteger(modulusText);
         BigInteger exponent = parseInteger(exponentText);
         BigInteger message = parseInteger(messageText);
-        BigInteger decryptedMessage = message.modPow(exponent, modulus);
+        BigInteger decryptedMessage = modularExponentiation(message, exponent, modulus);
         return bigIntegerToString(decryptedMessage);
+    }
+
+    private static BigInteger modularExponentiation(BigInteger message, BigInteger exponent, BigInteger modulus)
+    {
+        return message.modPow(exponent, modulus);
     }
 
     private static BigInteger parseInteger(String input)
