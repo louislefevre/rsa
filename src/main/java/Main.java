@@ -1,20 +1,9 @@
-import encryption.Cipher;
+import gui.MainInterface;
 
-public final class Main
+public class Main
 {
     public static void main(String[] args)
     {
-        Cipher cipher = new Cipher();
-        cipher.run();
+        new MainInterface();
     }
 }
-
-/*
-* TODO: Use the library BigInteger to work with big numbers.
-* TODO: Write tests for running the same message many times, seeing if it ever breaks.
-* TODO: Write tests for trying a variety of characters.
-* TODO: Add ability to encrypt/decrypt file.
-* TODO: Add ability to save keys to files.
-* TODO: Add menu functionality.
-* TODO: Have program run from command line.
-*/
