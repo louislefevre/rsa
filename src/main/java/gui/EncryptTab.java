@@ -1,6 +1,6 @@
 package gui;
 
-import cryptosystem.RSA;
+import encryption.RSA;
 
 import javax.swing.*;
 import java.awt.*;

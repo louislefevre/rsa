@@ -1,6 +1,6 @@
 package keys;
 
-import cryptosystem.RSA;
+import encryption.RSA;
 
 import java.math.BigInteger;
 

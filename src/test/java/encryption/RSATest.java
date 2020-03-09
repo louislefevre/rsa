@@ -1,4 +1,4 @@
-package cryptosystem;
+package encryption;
 
 import keys.KeyPair;
 import keys.RSAKeyGenerator;
