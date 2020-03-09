@@ -33,8 +33,13 @@ public final class RSAKeyPair
 
         int modulus = generateModulus(primeOne, primeTwo);
         int phi = generatePhi(primeOne, primeTwo);
-        int publicExponent = generatePublicExponent(phi);
-        int privateExponent = generatePrivateExponent(publicExponent, phi);
+
+        int publicExponent;
+        int privateExponent;
+        do {
+            publicExponent = generatePublicExponent(phi);
+            privateExponent = generatePrivateExponent(publicExponent, phi);
+        } while(publicExponent == privateExponent);
 
         this.publicKey = new PublicKey(modulus, publicExponent);
         this.privateKey = new PrivateKey(modulus, privateExponent);

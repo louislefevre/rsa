@@ -35,19 +35,19 @@ public final class RSA
         return decryptedText.toString();
     }
 
-    private static int encryptCharacter(int message, Key key)
+    private static int encryptCharacter(int character, Key key)
     {
         int exponent = key.getExponent();
         int modulus = key.getModulus();
 
-        return MathUtilities.modularExponentiation(message, exponent, modulus);
+        return MathUtilities.modularExponentiation(character, exponent, modulus);
     }
 
-    private static int decryptCharacter(int cipher, Key key)
+    private static int decryptCharacter(int character, Key key)
     {
         int exponent = key.getExponent();
         int modulus = key.getModulus();
 
-        return MathUtilities.modularExponentiation(cipher, exponent, modulus);
+        return MathUtilities.modularExponentiation(character, exponent, modulus);
     }
 }
