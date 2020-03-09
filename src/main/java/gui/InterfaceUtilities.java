@@ -5,8 +5,8 @@ import java.awt.*;
 
 final class InterfaceUtilities
 {
-    public static final int COLUMNS = 40;
-    public static final int ROWS = 5;
+    public static final int COLUMNS = 50;
+    public static final int ROWS = 10;
 
     private InterfaceUtilities()
     {
