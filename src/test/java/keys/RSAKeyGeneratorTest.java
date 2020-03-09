@@ -14,12 +14,9 @@ class RSAKeyGeneratorTest
         RSAKeyGenerator keyGenerator = new RSAKeyGenerator();
         KeyPair keyPair = keyGenerator.generateKeyPair();
 
-        PrivateKey privateKey = keyPair.getPrivateKey();
-        PublicKey publicKey = keyPair.getPublicKey();
+        String privateKeyExponent = keyPair.getPrivateKey().getExponentString();
+        String publicKeyExponent = keyPair.getPublicKey().getExponentString();
 
-        BigInteger privateExponent = privateKey.getExponent();
-        BigInteger publicExponent = publicKey.getExponent();
-
-        assertNotEquals(privateExponent, publicExponent);
+        assertNotEquals(privateKeyExponent, publicKeyExponent);
     }
 }

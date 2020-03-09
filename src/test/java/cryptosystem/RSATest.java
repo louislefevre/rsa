@@ -20,17 +20,12 @@ class RSATest
         RSAKeyGenerator keyGenerator = new RSAKeyGenerator();
         KeyPair keyPair = keyGenerator.generateKeyPair();
 
-        PublicKey publicKey = keyPair.getPublicKey();
-
-        BigInteger modulus = keyPair.getModulus();
-        BigInteger publicExponent = publicKey.getExponent();
-
-        String modulusText = ConversionUtilities.parseString(modulus);
-        String publicExponentText = ConversionUtilities.parseString(publicExponent);
+        String modulus = keyPair.getModulusString();
+        String publicExponent = keyPair.getPublicKey().getExponentString();
         String message = "This is a message!";
 
         RSA rsa = new RSA();
-        String encryptedMessage = rsa.encrypt(modulusText, publicExponentText, message);
+        String encryptedMessage = rsa.encrypt(modulus, publicExponent, message);
 
         assertNotEquals(encryptedMessage, message);
     }
@@ -41,21 +36,14 @@ class RSATest
         RSAKeyGenerator keyGenerator = new RSAKeyGenerator();
         KeyPair keyPair = keyGenerator.generateKeyPair();
 
-        PublicKey publicKey = keyPair.getPublicKey();
-        PrivateKey privateKey = keyPair.getPrivateKey();
-
-        BigInteger modulus = keyPair.getModulus();
-        BigInteger publicExponent = publicKey.getExponent();
-        BigInteger privateExponent = privateKey.getExponent();
-
-        String modulusText = ConversionUtilities.parseString(modulus);
-        String publicExponentText = ConversionUtilities.parseString(publicExponent);
-        String privateExponentText = ConversionUtilities.parseString(privateExponent);
+        String modulus = keyPair.getModulusString();
+        String publicExponent = keyPair.getPublicKey().getExponentString();
+        String privateExponent = keyPair.getPrivateKey().getExponentString();
         String message = "This is a message!";
 
         RSA rsa = new RSA();
-        String encryptedMessage = rsa.encrypt(modulusText, publicExponentText, message);
-        String decryptedMessage = rsa.decrypt(modulusText, privateExponentText, encryptedMessage);
+        String encryptedMessage = rsa.encrypt(modulus, publicExponent, message);
+        String decryptedMessage = rsa.decrypt(modulus, privateExponent, encryptedMessage);
 
         assertEquals(message, decryptedMessage);
     }
@@ -63,6 +51,45 @@ class RSATest
     @Test
     public void algorithmShouldWorkWithArbitraryKeyOrder()
     {
+        RSAKeyGenerator keyGenerator = new RSAKeyGenerator();
+        KeyPair keyPair = keyGenerator.generateKeyPair();
 
+        String modulus = keyPair.getModulusString();
+        String publicExponent = keyPair.getPublicKey().getExponentString();
+        String privateExponent = keyPair.getPrivateKey().getExponentString();
+        String message = "This is a message!";
+
+        RSA rsa = new RSA();
+
+        String encryptedMessage = rsa.encrypt(modulus, publicExponent, message);
+        String decryptedMessage = rsa.decrypt(modulus, privateExponent, encryptedMessage);
+        assertEquals(message, decryptedMessage, "The original message and decrypted message are not the same. (E: Public, D: Private)");
+
+        encryptedMessage = rsa.encrypt(modulus, privateExponent, message);
+        decryptedMessage = rsa.decrypt(modulus, publicExponent, encryptedMessage);
+        assertEquals(message, decryptedMessage, "The original message and decrypted message are not the same.  (E: Private, D: Public)");
+    }
+
+    @Test
+    public void algorithmShouldWorkForEveryAsciiCharacter()
+    {
+        RSA rsa = new RSA();
+        RSAKeyGenerator keyGenerator = new RSAKeyGenerator();
+        KeyPair keyPair = keyGenerator.generateKeyPair();
+
+        String modulus = keyPair.getModulusString();
+        String publicExponent = keyPair.getPublicKey().getExponentString();
+        String privateExponent = keyPair.getPrivateKey().getExponentString();
+
+        for (int i = 0; i < 128; i++)
+        {
+            char character = (char) i;
+            String message = Character.toString(character);
+
+            String encryptedMessage = rsa.encrypt(modulus, publicExponent, message);
+            String decryptedMessage = rsa.decrypt(modulus, privateExponent, encryptedMessage);
+
+            assertEquals(message, decryptedMessage);
+        }
     }
 }

@@ -11,7 +11,7 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 class MathUtilitiesTest
 {
     @Test
-    public void isPrimeIdentifiesCorrectly()
+    public void isPrimeShouldIdentifyCorrectly()
     {
         List<BigInteger> bigIntegerPrimes = MathUtilities.BIG_INTEGER_PRIMES;
 
@@ -25,7 +25,7 @@ class MathUtilitiesTest
     }
 
     @Test
-    public void isDivisibleByLargePrimeFindsDivisor()
+    public void isDivisibleByLargePrimeShouldFindDivisor()
     {
         assertTrue(MathUtilities.isDivisibleByLargePrime(BigInteger.valueOf(78031)));
         assertTrue(MathUtilities.isDivisibleByLargePrime(BigInteger.valueOf(2*9*5*7*11*78031)));
