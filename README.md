@@ -74,3 +74,6 @@ It would be easier to divide the task into a number of sub-tasks:
 - [Public Key Cryptography: RSA Encryption Algorithm](https://www.youtube.com/watch?v=wXB-V_Keiu8)
 - [Crypto-It - RSA](http://www.crypto-it.net/eng/asymmetric/rsa.html?tab=0)
 - [Computer Security CIS326](http://homepages.gold.ac.uk/rachel/)
+- [RSA Step-by-step](https://www.cryptool.org/en/cto-highlights/rsa-step-by-step)
+- [RSA Calculator](https://www.cs.drexel.edu/~jpopyack/IntroCS/HW/RSAWorksheet.html)
+- [Cryptography](https://introcs.cs.princeton.edu/java/99crypto/)
