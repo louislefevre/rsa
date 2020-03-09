@@ -1,20 +1,47 @@
 package util;
 
-import java.security.SecureRandom;
+import java.math.BigInteger;
+import java.util.ArrayList;
+import java.util.List;
 
 public final class MathUtilities
 {
-    public static final int ASCIIMax = 127;
+    public static final List<BigInteger> BIG_INTEGER_PRIMES = new ArrayList<>();
+    public static final int PRIME_BOUND = 65537;
+
+    static
+    {
+        for(int i = 2; i <= PRIME_BOUND; i++)
+            if(isPrime(i))
+                BIG_INTEGER_PRIMES.add(BigInteger.valueOf(i));
+    }
 
     private MathUtilities()
     {
         throw new UnsupportedOperationException();
     }
 
-    public static int generateRandomNumber(int min, int max)
+    public static boolean isDivisibleByLargePrime(BigInteger n)
     {
-        SecureRandom random = new SecureRandom();
-        return random.nextInt((max-min)+min);
+        BigInteger reduced = n;
+        boolean foundDivisor = true;
+
+        while (foundDivisor && !reduced.equals(BigInteger.ZERO))
+        {
+            foundDivisor = false;
+
+            for (BigInteger p : BIG_INTEGER_PRIMES)
+            {
+                if (reduced.mod(p).equals(BigInteger.ZERO))
+                {
+                    reduced = reduced.divide(p);
+                    foundDivisor = true;
+                    break;
+                }
+            }
+        }
+
+        return reduced.compareTo(BigInteger.valueOf(PRIME_BOUND)) > 0;
     }
 
     public static boolean isPrime(int num)
@@ -28,59 +55,5 @@ public final class MathUtilities
                 return false;
 
         return true;
-    }
-
-    public static boolean isCoPrime(int numOne, int numTwo)
-    {
-        return findGCD(numOne, numTwo) == 1;
-    }
-
-    public static int findGCD(int numOne, int numTwo)
-    {
-        return (numTwo != 0) ? findGCD(numTwo, numOne % numTwo) : numOne;
-    }
-
-    public static int findInverse(int numOne, int numTwo)
-    {
-        int store = numTwo;
-        int temp;
-        int q;
-        int sign = 1;
-        int result = 1;
-        int s = 0;
-
-        while (numOne!=0)
-        {
-            q = numTwo / numOne;
-            temp = result;
-            result = temp * q + s;
-            s = temp;
-            temp = numOne;
-            numOne = numTwo - q * temp;
-            numTwo = temp;
-            sign = -sign;
-        }
-        if (sign == -1)
-            s = numOne - s;
-
-        return (result - s) % store;
-    }
-
-    public static int modularExponentiation(int base, int power, int modulus)
-    {
-        int result = 1;
-        int update = base % modulus;
-
-        do
-        {
-            if (power % 2 == 1)
-                result = (result * update) % modulus;
-
-            power = (int)Math.floor(power / 2f);
-            update = (update * update) % modulus;
-
-        } while(power != 0);
-
-        return result;
     }
 }

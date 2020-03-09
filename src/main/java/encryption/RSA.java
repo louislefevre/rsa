@@ -1,7 +1,5 @@
 package encryption;
 
-import util.MathUtilities;
-
 public final class RSA
 {
     public RSA() { }

@@ -1,6 +1,5 @@
 package keys;
 
-import util.MathUtilities;
 import util.MersenneTwister;
 
 import java.math.BigInteger;

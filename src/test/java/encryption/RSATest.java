@@ -1,7 +1,6 @@
 package encryption;
 
 import org.junit.jupiter.api.Test;
-import util.MathUtilities;
 
 import static org.junit.jupiter.api.Assertions.*;
 
