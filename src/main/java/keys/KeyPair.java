@@ -1,5 +1,7 @@
 package keys;
 
+import util.ConversionUtilities;
+
 import java.math.BigInteger;
 
 public final class KeyPair
@@ -17,16 +19,21 @@ public final class KeyPair
 
     public PublicKey getPublicKey()
     {
-        return publicKey;
+        return this.publicKey;
     }
 
     public PrivateKey getPrivateKey()
     {
-        return privateKey;
+        return this.privateKey;
     }
 
     public BigInteger getModulus()
     {
-        return modulus;
+        return this.modulus;
+    }
+
+    public String getModulusString()
+    {
+        return ConversionUtilities.parseString(this.modulus);
     }
 }

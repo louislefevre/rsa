@@ -1,8 +1,10 @@
 package keys;
 
+import util.ConversionUtilities;
+
 import java.math.BigInteger;
 
-public abstract class Key
+abstract class Key
 {
     private final BigInteger exponent;
 
@@ -13,13 +15,11 @@ public abstract class Key
 
     public BigInteger getExponent()
     {
-        return exponent;
+        return this.exponent;
     }
 
-    @Override
-    public String toString() {
-        return "Key{" +
-                "exponent=" + exponent +
-                '}';
+    public String getExponentString()
+    {
+        return ConversionUtilities.parseString(this.exponent);
     }
 }

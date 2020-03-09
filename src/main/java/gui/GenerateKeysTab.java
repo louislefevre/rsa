@@ -65,29 +65,12 @@ final class GenerateKeysTab extends Tab
 
     private void generateKeys()
     {
-        this.createKeyPair();
-    }
-
-    private void createKeyPair()
-    {
         RSAKeyGenerator keyGenerator = new RSAKeyGenerator();
         KeyPair keyPair = keyGenerator.generateKeyPair();
 
-        PublicKey publicKey = keyPair.getPublicKey();
-        PrivateKey privateKey = keyPair.getPrivateKey();
-
-        BigInteger modulus = keyPair.getModulus();
-        BigInteger publicKeyExponent = publicKey.getExponent();
-        BigInteger privateKeyExponent = privateKey.getExponent();
-
-        this.setText(modulus, publicKeyExponent, privateKeyExponent);
-    }
-
-    private void setText(BigInteger modulus, BigInteger publicKeyExponent, BigInteger privateKeyExponent)
-    {
-        String modulusText = ConversionUtilities.parseString(modulus);
-        String publicKeyExponentText = ConversionUtilities.parseString(publicKeyExponent);
-        String privateKeyExponentText = ConversionUtilities.parseString(privateKeyExponent);
+        String modulusText = keyPair.getModulusString();
+        String publicKeyExponentText = keyPair.getPublicKey().getExponentString();
+        String privateKeyExponentText = keyPair.getPrivateKey().getExponentString();
 
         this.modulusTextArea.setText(modulusText);
         this.publicKeyTextArea.setText(publicKeyExponentText);
