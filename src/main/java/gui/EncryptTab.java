@@ -66,16 +66,24 @@ final class EncryptTab extends Tab
         String publicKeyText = this.publicKeyTextArea.getText();
         String messageText = this.messageTextArea.getText();
 
-        if(modulusText.isBlank() || publicKeyText.isBlank() || messageText.isBlank())
-            return;
-
         RSA rsa = new RSA();
         String encryptedMessage = "";
 
+        if(modulusText.isBlank() || publicKeyText.isBlank() || messageText.isBlank())
+        {
+            String alert = "All text boxes must be filled in.";
+            JOptionPane.showMessageDialog(null, alert);
+            return;
+        }
+
         try{
             encryptedMessage = rsa.encrypt(modulusText, publicKeyText, messageText);
-        } catch (ArithmeticException | NumberFormatException ex) {
-            System.out.println(ex.getMessage());
+        } catch (ArithmeticException ex) {
+            String alert = "Modulus must be a positive integer.";
+            JOptionPane.showMessageDialog(null, alert);
+        } catch (NumberFormatException ex) {
+            String alert = "Invalid number format, must be integer.";
+            JOptionPane.showMessageDialog(null, alert);
         }
 
         this.encryptedMessageTextArea.setText(encryptedMessage);
