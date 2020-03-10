@@ -4,3 +4,5 @@ target/
 *.iml
 *.class
 docs/
+*.exe
+META-INF
