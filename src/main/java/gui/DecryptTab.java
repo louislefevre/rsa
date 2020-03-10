@@ -70,7 +70,13 @@ final class DecryptTab extends Tab
             return;
 
         RSA rsa = new RSA();
-        String decryptedMessage = rsa.decrypt(modulusText, privateKeyText, encryptedMessageText);
+        String decryptedMessage = "";
+
+        try{
+            decryptedMessage = rsa.decrypt(modulusText, privateKeyText, encryptedMessageText);
+        } catch (ArithmeticException | NumberFormatException ex) {
+            System.out.println(ex.getMessage());
+        }
 
         this.messageTextArea.setText(decryptedMessage);
     }

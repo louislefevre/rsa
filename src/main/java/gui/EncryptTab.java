@@ -70,7 +70,13 @@ final class EncryptTab extends Tab
             return;
 
         RSA rsa = new RSA();
-        String encryptedMessage = rsa.encrypt(modulusText, publicKeyText, messageText);
+        String encryptedMessage = "";
+
+        try{
+            encryptedMessage = rsa.encrypt(modulusText, publicKeyText, messageText);
+        } catch (ArithmeticException | NumberFormatException ex) {
+            System.out.println(ex.getMessage());
+        }
 
         this.encryptedMessageTextArea.setText(encryptedMessage);
     }
