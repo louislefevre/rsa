@@ -69,7 +69,7 @@ final class DecryptTab extends Tab
         RSA rsa = new RSA();
         String decryptedMessage = "";
 
-        if(modulusText.isBlank() || privateKeyText.isBlank() || encryptedMessageText.isBlank())
+        if(modulusText.isEmpty() || privateKeyText.isEmpty() || encryptedMessageText.isEmpty())
         {
             String alert = "All text boxes must be filled in.";
             JOptionPane.showMessageDialog(null, alert);

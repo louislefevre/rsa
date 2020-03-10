@@ -3,7 +3,7 @@
   <dontWrapJar>false</dontWrapJar>
   <headerType>gui</headerType>
   <jar>E:\Git\GitHub\rsa-algorithm\out\artifacts\rsa_algorithm_jar\rsa-algorithm.jar</jar>
-  <outfile>E:\Git\GitHub\rsa-algorithm\out\artifacts\rsa_algorithm_jar\RSA.exe</outfile>
+  <outfile>E:\Git\GitHub\rsa-algorithm\RSA.exe</outfile>
   <errTitle>Requires Java in order to run.</errTitle>
   <cmdLine></cmdLine>
   <chdir>.</chdir>
@@ -13,12 +13,12 @@
   <stayAlive>false</stayAlive>
   <restartOnCrash>false</restartOnCrash>
   <manifest></manifest>
-  <icon>D:\Libraries\Downloads\security-protection-protect-key-password-login_108554.ico</icon>
+  <icon>E:\Git\GitHub\rsa-algorithm\config\icon.ico</icon>
   <jre>
     <path></path>
     <bundledJre64Bit>false</bundledJre64Bit>
     <bundledJreAsFallback>false</bundledJreAsFallback>
-    <minVersion>1.1.0</minVersion>
+    <minVersion>1.8.0</minVersion>
     <maxVersion></maxVersion>
     <jdkPreference>preferJre</jdkPreference>
     <runtimeBits>64/32</runtimeBits>
