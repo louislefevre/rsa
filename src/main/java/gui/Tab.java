@@ -21,6 +21,11 @@ public abstract class Tab
         };
     }
 
+    static boolean isStringBlank(String text)
+    {
+        return text == null || text.trim().isEmpty();
+    }
+
     static JTextArea createTextArea(String title)
     {
         JTextArea textArea = new JTextArea(ROWS, COLUMNS);

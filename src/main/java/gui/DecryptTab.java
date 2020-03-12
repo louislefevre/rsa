@@ -62,14 +62,14 @@ final class DecryptTab extends Tab
 
     private void decrypt()
     {
-        String modulusText = this.modulusTextArea.getText();
-        String privateKeyText = this.privateKeyTextArea.getText();
+        String modulusText = this.modulusTextArea.getText().replaceAll("\\s", "");
+        String privateKeyText = this.privateKeyTextArea.getText().replaceAll("\\s", "");
         String encryptedMessageText = this.encryptedMessageTextArea.getText();
 
         RSA rsa = new RSA();
         String decryptedMessage = "";
 
-        if(modulusText.isEmpty() || privateKeyText.isEmpty() || encryptedMessageText.isEmpty())
+        if(isStringBlank(modulusText) || isStringBlank(privateKeyText) || isStringBlank(encryptedMessageText))
         {
             String alert = "All text boxes must be filled in.";
             JOptionPane.showMessageDialog(null, alert);

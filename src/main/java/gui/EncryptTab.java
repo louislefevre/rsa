@@ -62,14 +62,14 @@ final class EncryptTab extends Tab
 
     private void encrypt()
     {
-        String modulusText = this.modulusTextArea.getText();
-        String publicKeyText = this.publicKeyTextArea.getText();
+        String modulusText = this.modulusTextArea.getText().replaceAll("\\s", "");
+        String publicKeyText = this.publicKeyTextArea.getText().replaceAll("\\s", "");
         String messageText = this.messageTextArea.getText();
 
         RSA rsa = new RSA();
         String encryptedMessage = "";
 
-        if(modulusText.isEmpty() || publicKeyText.isEmpty() || messageText.isEmpty())
+        if(isStringBlank(modulusText) || isStringBlank(publicKeyText) || isStringBlank(messageText))
         {
             String alert = "All text boxes must be filled in.";
             JOptionPane.showMessageDialog(null, alert);
