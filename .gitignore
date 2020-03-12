@@ -3,6 +3,5 @@ out/
 target/
 *.iml
 *.class
-*.exe
 META-INF
 *.ico

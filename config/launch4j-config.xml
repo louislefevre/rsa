@@ -3,8 +3,8 @@
   <dontWrapJar>false</dontWrapJar>
   <headerType>gui</headerType>
   <jar>E:\Git\GitHub\rsa-algorithm\out\artifacts\rsa_algorithm_jar\rsa-algorithm.jar</jar>
-  <outfile>E:\Git\GitHub\rsa-algorithm\RSA.exe</outfile>
-  <errTitle>Requires Java in order to run.</errTitle>
+  <outfile>E:\Git\GitHub\rsa-algorithm\executables\rsa-algorithm.exe</outfile>
+  <errTitle>Requires Java 1.8 in order to run.</errTitle>
   <cmdLine></cmdLine>
   <chdir>.</chdir>
   <priority>normal</priority>
