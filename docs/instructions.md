@@ -14,7 +14,8 @@
 - Design at least a simple user interface to allow the user to simulate a communication scenario:
   - Where Alice sends an encrypted message to Bob, and Bob decrypts the cipher text to read the message.
   - Also, Charlie may intercept the data flow and obtain unauthorised information.
-- For example, the following format may be adopted to demonstrate what happens with the plaintext m that travels from Alice to Bob, where “??” parts are for you to design:
+- For example, the following format may be adopted to demonstrate what happens with the plaintext m that travels from Alice to Bob, where “??” parts are for you to design:  
+<pre>
   Alice    Charlie    Bob
     m
     ↓
@@ -27,6 +28,7 @@
     ??   →   ??   →   ??
              ↓        ↓
              ??       ??
+</pre>
 
 It would be easier to divide the task into a number of sub-tasks:
 1. Implement a crypto-random key generator and the algorithm for modular exponentiation.
