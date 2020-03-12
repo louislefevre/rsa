@@ -18,10 +18,10 @@ final class DecryptTab extends Tab
         this.title = "Decrypt Message";
         this.panel = new JPanel();
         this.decryptButton = new JButton("Decrypt Message");
-        this.modulusTextArea = InterfaceUtilities.createEditableTextArea("Enter Modulus");
-        this.privateKeyTextArea = InterfaceUtilities.createEditableTextArea("Enter Private Key");
-        this.encryptedMessageTextArea = InterfaceUtilities.createEditableTextArea("Enter Encrypted Message");
-        this.messageTextArea = InterfaceUtilities.createNonEditableTextArea("Decrypted Message");
+        this.modulusTextArea = createEditableTextArea("Enter Modulus");
+        this.privateKeyTextArea = createEditableTextArea("Enter Private Key");
+        this.encryptedMessageTextArea = createEditableTextArea("Enter Encrypted Message");
+        this.messageTextArea = createNonEditableTextArea("Decrypted Message");
     }
 
     @Override
@@ -37,17 +37,17 @@ final class DecryptTab extends Tab
 
         this.decryptButton.setAlignmentX(Component.CENTER_ALIGNMENT);
 
-        this.panel.add(InterfaceUtilities.addAreaPadding(5, 5));
+        this.panel.add(addAreaPadding(5, 5));
         this.panel.add(this.modulusTextArea);
-        this.panel.add(InterfaceUtilities.addAreaPadding(5, 5));
+        this.panel.add(addAreaPadding(5, 5));
         this.panel.add(this.privateKeyTextArea);
-        this.panel.add(InterfaceUtilities.addAreaPadding(5, 5));
+        this.panel.add(addAreaPadding(5, 5));
         this.panel.add(this.encryptedMessageTextArea);
-        this.panel.add(InterfaceUtilities.addAreaPadding(5, 5));
+        this.panel.add(addAreaPadding(5, 5));
         this.panel.add(this.decryptButton);
-        this.panel.add(InterfaceUtilities.addAreaPadding(5, 5));
+        this.panel.add(addAreaPadding(5, 5));
         this.panel.add(this.messageTextArea);
-        this.panel.add(InterfaceUtilities.addAreaPadding(5, 5));
+        this.panel.add(addAreaPadding(5, 5));
 
         this.decryptButton.addActionListener(this.activate());
 

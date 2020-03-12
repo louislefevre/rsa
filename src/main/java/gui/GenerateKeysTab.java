@@ -19,9 +19,9 @@ final class GenerateKeysTab extends Tab
         this.title = "Generate Keys";
         this.panel = new JPanel();
         this.generateButton = new JButton("Generate Keys");
-        this.modulusTextArea = InterfaceUtilities.createNonEditableTextArea("Modulus");
-        this.publicKeyTextArea = InterfaceUtilities.createNonEditableTextArea("Public Key");
-        this.privateKeyTextArea = InterfaceUtilities.createNonEditableTextArea("Private Key");
+        this.modulusTextArea = createNonEditableTextArea("Modulus");
+        this.publicKeyTextArea = createNonEditableTextArea("Public Key");
+        this.privateKeyTextArea = createNonEditableTextArea("Private Key");
     }
 
     @Override
@@ -37,15 +37,15 @@ final class GenerateKeysTab extends Tab
 
         this.generateButton.setAlignmentX(Component.CENTER_ALIGNMENT);
 
-        this.panel.add(InterfaceUtilities.addAreaPadding(5, 5));
+        this.panel.add(addAreaPadding(5, 5));
         this.panel.add(this.generateButton);
-        this.panel.add(InterfaceUtilities.addAreaPadding(5, 5));
+        this.panel.add(addAreaPadding(5, 5));
         this.panel.add(this.modulusTextArea);
-        this.panel.add(InterfaceUtilities.addAreaPadding(5, 5));
+        this.panel.add(addAreaPadding(5, 5));
         this.panel.add(this.publicKeyTextArea);
-        this.panel.add(InterfaceUtilities.addAreaPadding(5, 5));
+        this.panel.add(addAreaPadding(5, 5));
         this.panel.add(this.privateKeyTextArea);
-        this.panel.add(InterfaceUtilities.addAreaPadding(5, 5));
+        this.panel.add(addAreaPadding(5, 5));
 
         this.generateButton.addActionListener(this.activate());
 

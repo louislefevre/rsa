@@ -18,10 +18,10 @@ final class EncryptTab extends Tab
         this.title = "Encrypt Message";
         this.panel = new JPanel();
         this.encryptButton = new JButton("Encrypt Message");
-        this.modulusTextArea = InterfaceUtilities.createEditableTextArea("Enter Modulus");
-        this.publicKeyTextArea = InterfaceUtilities.createEditableTextArea("Enter Public Key");
-        this.messageTextArea = InterfaceUtilities.createEditableTextArea("Enter Plaintext Message");
-        this.encryptedMessageTextArea = InterfaceUtilities.createNonEditableTextArea("Encrypted Message");
+        this.modulusTextArea = createEditableTextArea("Enter Modulus");
+        this.publicKeyTextArea = createEditableTextArea("Enter Public Key");
+        this.messageTextArea = createEditableTextArea("Enter Plaintext Message");
+        this.encryptedMessageTextArea = createNonEditableTextArea("Encrypted Message");
     }
 
     @Override
@@ -37,17 +37,17 @@ final class EncryptTab extends Tab
 
         this.encryptButton.setAlignmentX(Component.CENTER_ALIGNMENT);
 
-        this.panel.add(InterfaceUtilities.addAreaPadding(5, 5));
+        this.panel.add(addAreaPadding(5, 5));
         this.panel.add(this.modulusTextArea);
-        this.panel.add(InterfaceUtilities.addAreaPadding(5, 5));
+        this.panel.add(addAreaPadding(5, 5));
         this.panel.add(this.publicKeyTextArea);
-        this.panel.add(InterfaceUtilities.addAreaPadding(5, 5));
+        this.panel.add(addAreaPadding(5, 5));
         this.panel.add(this.messageTextArea);
-        this.panel.add(InterfaceUtilities.addAreaPadding(5, 5));
+        this.panel.add(addAreaPadding(5, 5));
         this.panel.add(this.encryptButton);
-        this.panel.add(InterfaceUtilities.addAreaPadding(5, 5));
+        this.panel.add(addAreaPadding(5, 5));
         this.panel.add(this.encryptedMessageTextArea);
-        this.panel.add(InterfaceUtilities.addAreaPadding(5, 5));
+        this.panel.add(addAreaPadding(5, 5));
 
         this.encryptButton.addActionListener(this.activate());
 
