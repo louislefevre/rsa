@@ -1,6 +1,7 @@
 package gui;
 
 import javax.swing.*;
+import java.awt.*;
 
 public final class MainInterface extends JFrame
 {
@@ -14,6 +15,11 @@ public final class MainInterface extends JFrame
 
     private void assembleInterface()
     {
+        Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
+        int width = screenSize.width / 3;
+        double height = screenSize.height / 1.25;
+        setBounds(0, 0, width, (int)height);
+
         JTabbedPane tabPane = new JTabbedPane();
         GenerateKeysTab keysTab = new GenerateKeysTab();
         EncryptTab encryptTab = new EncryptTab();
