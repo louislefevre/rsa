@@ -60,8 +60,7 @@ final class GenerateKeysTab extends Tab
 
     private void generateKeys()
     {
-        RSAKeyGenerator keyGenerator = new RSAKeyGenerator();
-        KeyPair keyPair = keyGenerator.generateKeyPair();
+        KeyPair keyPair = RSAKeyGenerator.generateKeyPair();
 
         String modulusText = keyPair.getModulusString();
         String publicKeyExponentText = keyPair.getPublicKey().getExponentString();

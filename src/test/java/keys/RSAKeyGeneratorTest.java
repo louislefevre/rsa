@@ -9,8 +9,7 @@ class RSAKeyGeneratorTest
     @Test
     public void keyExponentsAreDifferent()
     {
-        RSAKeyGenerator keyGenerator = new RSAKeyGenerator();
-        KeyPair keyPair = keyGenerator.generateKeyPair();
+        KeyPair keyPair = RSAKeyGenerator.generateKeyPair();
 
         String privateKeyExponent = keyPair.getPrivateKey().getExponentString();
         String publicKeyExponent = keyPair.getPublicKey().getExponentString();

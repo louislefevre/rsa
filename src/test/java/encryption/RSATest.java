@@ -12,8 +12,7 @@ class RSATest
     @Test
     public void encryptedMessageShouldBeDifferentFromOriginal()
     {
-        RSAKeyGenerator keyGenerator = new RSAKeyGenerator();
-        KeyPair keyPair = keyGenerator.generateKeyPair();
+        KeyPair keyPair = RSAKeyGenerator.generateKeyPair();
 
         String modulus = keyPair.getModulusString();
         String publicExponent = keyPair.getPublicKey().getExponentString();
@@ -28,8 +27,7 @@ class RSATest
     @Test
     public void decryptedMessageShouldBeSameAsOriginal()
     {
-        RSAKeyGenerator keyGenerator = new RSAKeyGenerator();
-        KeyPair keyPair = keyGenerator.generateKeyPair();
+        KeyPair keyPair = RSAKeyGenerator.generateKeyPair();
 
         String modulus = keyPair.getModulusString();
         String publicExponent = keyPair.getPublicKey().getExponentString();
@@ -46,8 +44,7 @@ class RSATest
     @Test
     public void algorithmShouldWorkWithArbitraryKeyOrder()
     {
-        RSAKeyGenerator keyGenerator = new RSAKeyGenerator();
-        KeyPair keyPair = keyGenerator.generateKeyPair();
+        KeyPair keyPair = RSAKeyGenerator.generateKeyPair();
 
         String modulus = keyPair.getModulusString();
         String publicExponent = keyPair.getPublicKey().getExponentString();
@@ -69,8 +66,7 @@ class RSATest
     public void algorithmShouldWorkForEveryAsciiCharacter()
     {
         RSA rsa = new RSA();
-        RSAKeyGenerator keyGenerator = new RSAKeyGenerator();
-        KeyPair keyPair = keyGenerator.generateKeyPair();
+        KeyPair keyPair = RSAKeyGenerator.generateKeyPair();
 
         String modulus = keyPair.getModulusString();
         String publicExponent = keyPair.getPublicKey().getExponentString();
