@@ -13,13 +13,7 @@ public abstract class Tab
 
     abstract Component createComponent();
 
-    ActionListener activate()
-    {
-        return event ->
-        {
-            throw new UnsupportedOperationException("Functionality has not been implemented.");
-        };
-    }
+    abstract ActionListener activate();
 
     static boolean isStringBlank(String text)
     {
