@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!--suppress ALL -->
 <launch4jConfig>
   <dontWrapJar>false</dontWrapJar>
   <headerType>gui</headerType>
-  <jar>E:\Git\GitHub\rsa-algorithm\out\artifacts\rsa_algorithm_jar\rsa-algorithm.jar</jar>
+  <jar>E:\Git\GitHub\rsa-algorithm\executables\rsa-algorithm.jar</jar>
   <outfile>E:\Git\GitHub\rsa-algorithm\executables\rsa-algorithm.exe</outfile>
-  <errTitle>Requires Java 1.8 in order to run.</errTitle>
+  <errTitle>Requires Java 1.8 or higher in order to run.</errTitle>
   <cmdLine></cmdLine>
   <chdir>.</chdir>
   <priority>normal</priority>
@@ -27,14 +26,14 @@
   <versionInfo>
     <fileVersion>1.0.0.0</fileVersion>
     <txtFileVersion>1.0</txtFileVersion>
-    <fileDescription>RSA algorithm for encryption and decryption.</fileDescription>
+    <fileDescription>RSA cryptosystem for demonstrating the encryption and decryption of messages.</fileDescription>
     <copyright>Louis Lefevre, 2020</copyright>
     <productVersion>1.0.0.0</productVersion>
     <txtProductVersion>1.0</txtProductVersion>
     <productName>RSA Cryptosystem</productName>
     <companyName></companyName>
-    <internalName>RSA</internalName>
-    <originalFilename>RSA.exe</originalFilename>
+    <internalName>rsa-algorithm</internalName>
+    <originalFilename>rsa-algorithm.exe</originalFilename>
     <trademarks></trademarks>
     <language>ENGLISH_UK</language>
   </versionInfo>
