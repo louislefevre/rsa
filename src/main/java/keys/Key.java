@@ -13,11 +13,6 @@ abstract class Key
         this.exponent = exponent;
     }
 
-    public BigInteger getExponent()
-    {
-        return this.exponent;
-    }
-
     public String getExponentString()
     {
         return this.exponent.toString(RSA.RADIX);

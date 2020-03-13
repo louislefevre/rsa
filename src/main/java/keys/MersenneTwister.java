@@ -178,6 +178,7 @@ import java.io.*;
  @version 22
  */
 
+@SuppressWarnings("ALL")
 final strictfp class MersenneTwister extends java.util.Random implements Serializable, Cloneable
 {
     // Serialization

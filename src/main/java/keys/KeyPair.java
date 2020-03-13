@@ -27,11 +27,6 @@ public final class KeyPair
         return this.privateKey;
     }
 
-    public BigInteger getModulus()
-    {
-        return this.modulus;
-    }
-
     public String getModulusString()
     {
         return this.modulus.toString(RSA.RADIX);

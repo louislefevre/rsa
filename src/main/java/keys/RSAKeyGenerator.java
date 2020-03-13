@@ -9,8 +9,6 @@ public final class RSAKeyGenerator
     public static final short BIT_LENGTH = 2048;
     public static final int[] FERMAT_NUMBERS = {65537, 257, 17, 5, 3};
 
-    public RSAKeyGenerator() { }
-
     public static KeyPair generateKeyPair()
     {
         BigInteger primeP = generatePrime(BIT_LENGTH);
