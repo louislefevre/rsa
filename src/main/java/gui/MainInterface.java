@@ -16,9 +16,9 @@ public final class MainInterface extends JFrame
     private void assembleInterface()
     {
         Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
-        int width = screenSize.width / 3;
-        double height = screenSize.height / 1.25;
-        setBounds(0, 0, width, (int)height);
+        double width = screenSize.width * 0.5;
+        double height = screenSize.height * 0.9;
+        setBounds(0, 0, (int)width, (int)height);
 
         JTabbedPane tabPane = new JTabbedPane();
         GenerateKeysTab keysTab = new GenerateKeysTab();
@@ -31,7 +31,7 @@ public final class MainInterface extends JFrame
 
         super.setTitle(TITLE);
         super.add(tabPane);
-        super.pack();
+        //super.pack();
         super.setVisible(true);
     }
 }
