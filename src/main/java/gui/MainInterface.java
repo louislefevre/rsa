@@ -5,33 +5,36 @@ import java.awt.*;
 
 public final class MainInterface extends JFrame
 {
-    private final static String TITLE = "RSA";
-
     public MainInterface()
     {
-        assembleInterface();
+        this.assembleInterface();
         super.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
     }
 
     private void assembleInterface()
     {
-        Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
-        double width = screenSize.width * 0.5;
-        double height = screenSize.height * 0.9;
-        setBounds(0, 0, (int)width, (int)height);
+        String title = "RSA Algorithm";
+        super.setTitle(title);
+
+        Image image = Toolkit.getDefaultToolkit().getImage("src/main/resources/icon.png");
+        super.setIconImage(image);
 
         JTabbedPane tabPane = new JTabbedPane();
         GenerateKeysTab keysTab = new GenerateKeysTab();
         EncryptTab encryptTab = new EncryptTab();
         DecryptTab decryptTab = new DecryptTab();
-
         tabPane.addTab(keysTab.getTitle(), keysTab.createComponent());
         tabPane.addTab(encryptTab.getTitle(), encryptTab.createComponent());
         tabPane.addTab(decryptTab.getTitle(), decryptTab.createComponent());
-
-        super.setTitle(TITLE);
         super.add(tabPane);
-        //super.pack();
+        super.pack();
+
+        Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
+        double width = screenSize.getWidth() * 0.5;
+        double height = screenSize.getHeight() * 0.9;
+        super.setSize((int)width, (int)height);
+        super.setLocationRelativeTo(null);
+
         super.setVisible(true);
     }
 }
