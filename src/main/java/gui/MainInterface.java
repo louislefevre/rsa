@@ -40,7 +40,10 @@ public final class MainInterface extends JFrame
          * interface to be 50% of the width and 90% of the height. The location of the interface
          * is also set to appear in the centre of the screen. */
         Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
-        double width = screenSize.getWidth() * 0.5;
+        double width = screenSize.getWidth();
+        do {
+             width *= 0.5;
+        } while(width >= 1900); // Prevents the window appearing too large on multi-monitor systems
         double height = screenSize.getHeight() * 0.9;
         super.setSize((int)width, (int)height);
         super.setLocationRelativeTo(null);
