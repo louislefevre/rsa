@@ -2,8 +2,8 @@
 <launch4jConfig>
   <dontWrapJar>false</dontWrapJar>
   <headerType>gui</headerType>
-  <jar>E:\Git\GitHub\rsa-algorithm\executables\rsa-algorithm.jar</jar>
-  <outfile>E:\Git\GitHub\rsa-algorithm\executables\rsa-algorithm.exe</outfile>
+  <jar>C:\Users\Louis\Git\rsa-algorithm\executables\rsa-algorithm.jar</jar>
+  <outfile>C:\Users\Louis\Git\rsa-algorithm\executables\rsa-algorithm.exe</outfile>
   <errTitle>Requires Java 1.8 or higher in order to run.</errTitle>
   <cmdLine></cmdLine>
   <chdir>.</chdir>
@@ -13,7 +13,7 @@
   <stayAlive>false</stayAlive>
   <restartOnCrash>false</restartOnCrash>
   <manifest></manifest>
-  <icon>E:\Git\GitHub\rsa-algorithm\src\main\resources\icon.ico</icon>
+  <icon>C:\Users\Louis\Git\rsa-algorithm\src\main\resources\icon.ico</icon>
   <jre>
     <path></path>
     <bundledJre64Bit>false</bundledJre64Bit>
