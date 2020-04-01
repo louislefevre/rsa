@@ -1,5 +1,5 @@
 # RSA Algorithm
-Demonstrates how the RSA algorithms work.
+Demonstrates how the RSA algorithm works.
 
 ## How to Run
 To run from the source code:
@@ -11,11 +11,13 @@ java Main
 
 To run from the JAR file:
 ```
+cd executables/
 java -jar rsa-algorithm.jar
 ```
 
 To run from the EXE file:
 ```
+cd executables/
 rsa-algorithm.exe
 ```
 
