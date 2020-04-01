@@ -37,16 +37,19 @@ public final class RSA
 
     private static BigInteger modularExponentiation(BigInteger message, BigInteger exponent, BigInteger modulus)
     {
+        /* Returns a BigInteger whose value is message^exponent mod modulus */
         return message.modPow(exponent, modulus);
     }
 
     private static BigInteger parseInteger(String input)
     {
+        /* Translates the String representation of a BigInteger in the specified radix into a BigInteger. */
         return new BigInteger(input, RADIX);
     }
 
     private static String parseString(BigInteger input)
     {
+        /* Returns the String representation of this BigInteger in the given radix. */
         return input.toString(RADIX);
     }
 

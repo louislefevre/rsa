@@ -62,7 +62,7 @@ final class EncryptTab extends Tab
 
     private void encrypt()
     {
-        String modulusText = this.modulusTextArea.getText().replaceAll("\\s", "");
+        String modulusText = this.modulusTextArea.getText().replaceAll("\\s", ""); // replaceAll removes all spaces present
         String publicKeyText = this.publicKeyTextArea.getText().replaceAll("\\s", "");
         String messageText = this.messageTextArea.getText();
 

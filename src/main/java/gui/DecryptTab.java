@@ -62,7 +62,7 @@ final class DecryptTab extends Tab
 
     private void decrypt()
     {
-        String modulusText = this.modulusTextArea.getText().replaceAll("\\s", "");
+        String modulusText = this.modulusTextArea.getText().replaceAll("\\s", ""); // replaceAll removes all spaces present
         String privateKeyText = this.privateKeyTextArea.getText().replaceAll("\\s", "");
         String encryptedMessageText = this.encryptedMessageTextArea.getText();
 

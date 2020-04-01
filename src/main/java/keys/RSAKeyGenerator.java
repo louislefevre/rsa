@@ -49,6 +49,7 @@ public final class RSAKeyGenerator
 
     private static BigInteger generatePrime(int bitLength)
     {
+        /* Using the MersenneTwister pseudo-random number generator, generates a prime number with a size of bitLength */
         Random random = new MersenneTwister();
         return BigInteger.probablePrime(bitLength, random);
     }
@@ -65,6 +66,8 @@ public final class RSAKeyGenerator
 
     private static BigInteger generatePublicExponent(BigInteger phi)
     {
+        /* Loops through the Fermat numbers, finding the first one that is compatible. Typically, this will always be
+         * the first value of 65537, but this method is present for the sake of security. */
         for(int value : FERMAT_NUMBERS)
         {
             BigInteger fermatNumber = BigInteger.valueOf(value);
@@ -76,6 +79,7 @@ public final class RSAKeyGenerator
 
     private static BigInteger generatePrivateExponent(BigInteger exponent, BigInteger phi)
     {
+        /* Returns a BigInteger whose value is (exponent-1 mod phi). */
         return exponent.modInverse(phi);
     }
 
