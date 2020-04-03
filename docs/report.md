@@ -1,6 +1,8 @@
 # Report
 Documentation report for the RSA algorithm implemented by Louis Lefevre.
 
+A video demonstration and explanation can be found [here](https://vimeo.com/403422627).
+
 ## Algorithms
 ### Key Generation
 Before encryption or decryption can take place, we must generate a pair of keys: the public key and the private key. The public key is available publicly and shared with the world, while the private key is kept secret by its owner. The following describes the steps in detail:
