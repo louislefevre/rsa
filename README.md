@@ -1,12 +1,14 @@
 # RSA Algorithm
-Demonstrates how the RSA algorithm works.
+RSA cryptosystem for demonstrating the encryption and decryption of messages. Main purpose of this project is to demonstrate how the RSA algorithm works.
 
-## Contains
-- docs/ - The report and its attached images
-- bin/ - Easy-to-execute files for running the program
-- src/ - The source code for the program
+A video demonstration and explanation can be found [here](https://vimeo.com/403422627).
+
+## Example
+<img src="assets/decryption.png" width="50%" height="50%">
 
 ## How to Run
+The compiler and runtime environment require minimum Java 11, and if on Windows, running from the command line requires the Java JDK to be added to the PATH environment variable.
+
 To run the source code from command line:
 ```
 cd src/main/java
@@ -26,7 +28,10 @@ cd bin/
 rsa-algorithm.exe
 ```
 
-## Notes
-- The compiler and runtime environment require minimum Java 11.
-- If on Windows, running the program from the command line requires the Java JDK to be added to the PATH environment variable.
-- When generating the keys, the entire process is logged and explained in the console. However, note that this is only viewable when running the program via the first two "How to Run" options.
+## How to Use
+When generating the keys, the entire process of how the RSA algorithm works is logged and explained in the console. However, note that this is only viewable when running the program via the first two "How to Run" options.
+
+After starting the program:
+- Generate the modulus, public key, and private key ([example](assets/generation.png)).
+- Encrypt a message using the modulus and public key ([example](assets/encryption.png)).
+- Decrypt the message using the modulus and private key ([example](assets/decryption.png)).
