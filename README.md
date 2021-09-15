@@ -3,7 +3,7 @@ Demonstrates how the RSA algorithm works.
 
 ## Contains
 - docs/ - The report and its attached images
-- executables/ - Easy-to-execute files for running the program
+- bin/ - Easy-to-execute files for running the program
 - src/ - The source code for the program
 
 ## How to Run
@@ -16,17 +16,17 @@ java Main
 
 To run the JAR file from command line:
 ```
-cd executables/
+cd bin/
 java -jar rsa-algorithm.jar
 ```
 
 To run the EXE file from command line:
 ```
-cd executables/
+cd bin/
 rsa-algorithm.exe
 ```
 
 ## Notes
-- The compiler and runtime environment require minimum Java 8.
+- The compiler and runtime environment require minimum Java 11.
 - If on Windows, running the program from the command line requires the Java JDK to be added to the PATH environment variable.
 - When generating the keys, the entire process is logged and explained in the console. However, note that this is only viewable when running the program via the first two "How to Run" options.
