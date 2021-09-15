@@ -36,15 +36,12 @@ public final class RSAKeyGenerator
         BigInteger publicExponent = generatePublicExponent(phi);
         BigInteger privateExponent = generatePrivateExponent(publicExponent, phi);
 
-        /* We store the public key and private key exponents in their own objects for convenience and clarity. */
-        PublicKey publicKey = new PublicKey(publicExponent);
-        PrivateKey privateKey = new PrivateKey(privateExponent);
-        
         /* Details the results of the key generation process to the console. Note that this is NOT visible if the
          * application was not started from the console via the JAR. */
         printResults(primeP, primeQ, modulus, phi, publicExponent, privateExponent);
 
-        return new KeyPair(publicKey, privateKey, modulus);
+        /* Create a new private and public key pair */
+        return new KeyPair(publicExponent, privateExponent, modulus);
     }
 
     private static BigInteger generatePrime(int bitLength)

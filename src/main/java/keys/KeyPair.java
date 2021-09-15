@@ -6,23 +6,23 @@ import java.math.BigInteger;
 
 public final class KeyPair
 {
-    private final PublicKey publicKey;
-    private final PrivateKey privateKey;
+    private final Key publicKey;
+    private final Key privateKey;
     private final BigInteger modulus;
 
-    public KeyPair(PublicKey publicKey, PrivateKey privateKey, BigInteger modulus)
+    public KeyPair(BigInteger publicKeyExponent, BigInteger privateKeyExponent, BigInteger modulus)
     {
-        this.publicKey = publicKey;
-        this.privateKey = privateKey;
+        this.publicKey = new Key(publicKeyExponent);
+        this.privateKey = new Key(privateKeyExponent);
         this.modulus = modulus;
     }
 
-    public PublicKey getPublicKey()
+    public Key getPublicKey()
     {
         return this.publicKey;
     }
 
-    public PrivateKey getPrivateKey()
+    public Key getPrivateKey()
     {
         return this.privateKey;
     }
@@ -31,4 +31,20 @@ public final class KeyPair
     {
         return this.modulus.toString(RSA.RADIX);
     }
+
+    public final class Key
+    {
+        private final BigInteger exponent;
+
+        Key(BigInteger exponent)
+        {
+            this.exponent = exponent;
+        }
+
+        public String getExponentString()
+        {
+            return this.exponent.toString(RSA.RADIX);
+        }
+    }
+
 }
