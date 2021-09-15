@@ -1,5 +1,5 @@
 # RSA Algorithm
-RSA cryptosystem for demonstrating the encryption and decryption of messages. Main purpose of this project is to demonstrate how the RSA algorithm works.
+RSA cryptosystem for demonstrating the encryption and decryption of messages. The main purpose of this project is to show how the RSA algorithm works through a GUI, and should not be considered secure for actual encryption purposes.
 
 A video demonstration and explanation can be found [here](https://vimeo.com/403422627).
 
@@ -7,7 +7,7 @@ A video demonstration and explanation can be found [here](https://vimeo.com/4034
 <img src="assets/decryption.png" width="50%" height="50%">
 
 ## How to Run
-The compiler and runtime environment require minimum Java 11, and if on Windows, running from the command line requires the Java JDK to be added to the PATH environment variable.
+The compiler and runtime environment require minimum Java 8, and if on Windows, running from the command line requires the Java JDK to be added to the PATH environment variable.
 
 To run the source code from command line:
 ```

@@ -4,7 +4,7 @@
   <headerType>gui</headerType>
   <jar>C:\Users\Louis\Git\rsa-algorithm\bin\rsa-algorithm.jar</jar>
   <outfile>C:\Users\Louis\Git\rsa-algorithm\bin\rsa-algorithm.exe</outfile>
-  <errTitle>Requires Java 11 or higher in order to run.</errTitle>
+  <errTitle>Requires Java 8 or higher in order to run.</errTitle>
   <cmdLine></cmdLine>
   <chdir>.</chdir>
   <priority>normal</priority>
@@ -18,7 +18,7 @@
     <path></path>
     <bundledJre64Bit>false</bundledJre64Bit>
     <bundledJreAsFallback>false</bundledJreAsFallback>
-    <minVersion>11</minVersion>
+    <minVersion>1.8</minVersion>
     <maxVersion></maxVersion>
     <jdkPreference>preferJre</jdkPreference>
     <runtimeBits>64/32</runtimeBits>
