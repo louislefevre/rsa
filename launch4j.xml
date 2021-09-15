@@ -2,8 +2,8 @@
 <launch4jConfig>
   <dontWrapJar>false</dontWrapJar>
   <headerType>gui</headerType>
-  <jar>C:\Users\Louis\Git\rsa-algorithm\bin\rsa-algorithm.jar</jar>
-  <outfile>C:\Users\Louis\Git\rsa-algorithm\bin\rsa-algorithm.exe</outfile>
+  <jar>C:\Users\Louis\Git\rsa\bin\rsa.jar</jar>
+  <outfile>C:\Users\Louis\Git\rsa\bin\rsa.exe</outfile>
   <errTitle>Requires Java 8 or higher in order to run.</errTitle>
   <cmdLine></cmdLine>
   <chdir>.</chdir>
@@ -13,7 +13,7 @@
   <stayAlive>false</stayAlive>
   <restartOnCrash>false</restartOnCrash>
   <manifest></manifest>
-  <icon>C:\Users\Louis\Git\rsa-algorithm\src\main\resources\icon.ico</icon>
+  <icon>C:\Users\Louis\Git\rsa\src\main\resources\icon.ico</icon>
   <jre>
     <path></path>
     <bundledJre64Bit>false</bundledJre64Bit>
@@ -32,8 +32,8 @@
     <txtProductVersion>1.0</txtProductVersion>
     <productName>RSA Cryptosystem</productName>
     <companyName></companyName>
-    <internalName>rsa-algorithm</internalName>
-    <originalFilename>rsa-algorithm.exe</originalFilename>
+    <internalName>rsa</internalName>
+    <originalFilename>rsa.exe</originalFilename>
     <trademarks></trademarks>
     <language>ENGLISH_UK</language>
   </versionInfo>

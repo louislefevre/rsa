@@ -1,4 +1,4 @@
-# RSA Algorithm
+# RSA
 RSA cryptosystem for demonstrating the encryption and decryption of messages. The main purpose of this project is to show how the RSA algorithm works through a GUI, and should not be considered secure for actual encryption purposes.
 
 A video demonstration and explanation can be found [here](https://vimeo.com/403422627).
@@ -19,13 +19,13 @@ java Main
 To run the JAR file from command line:
 ```
 cd bin/
-java -jar rsa-algorithm.jar
+java -jar rsa.jar
 ```
 
 To run the EXE file from command line:
 ```
 cd bin/
-rsa-algorithm.exe
+rsa.exe
 ```
 
 ## How to Use
