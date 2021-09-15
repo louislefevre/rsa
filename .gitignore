@@ -4,3 +4,7 @@ target/
 *.iml
 *.class
 META-INF
+.classpath
+.project
+.settings/
+.vscode
