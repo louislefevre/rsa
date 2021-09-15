@@ -179,7 +179,7 @@ import java.io.*;
  */
 
 @SuppressWarnings("ALL")
-final strictfp class MersenneTwister extends java.util.Random implements Serializable, Cloneable
+final strictfp class MersenneTwister extends java.util.Random implements Cloneable
 {
     // Serialization
     private static final long serialVersionUID = -4035832775130174188L;  // locked as of Version 15
